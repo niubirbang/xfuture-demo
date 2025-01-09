@@ -1,5 +1,6 @@
 import { app, BrowserWindow } from 'electron'
 import path from 'path'
+import fs from 'fs'
 import xEngine from 'xfuture/index'
 
 const getXfuturePath = () => {
@@ -15,6 +16,8 @@ export const install = async () => {
   let xfutureHelperPath = ''
   let xfutureResourcePath = path.join(xfuturePath, 'resources')
   const xfutureLogPath = path.join(app.getPath('appData'), `xfuture-demo/logs`)
+
+  fs.mkdirSync(xfutureLogPath, { recursive: true })
 
   switch (process.platform) {
     case 'win32':
