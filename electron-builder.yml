@@ -25,7 +25,7 @@ nsis:
 mac:
   artifactName: ${name}-${version}-macos-${arch}.${ext}
   target:
-    - pkg
+    - dmg
   entitlements: build/entitlements.mac.plist
   entitlementsInherit: build/entitlements.mac.plist
   notarize: false
@@ -37,10 +37,20 @@ mac:
     - NSDocumentsFolderUsageDescription: Application requests access to the user's Documents folder.
     - NSDownloadsFolderUsageDescription: Application requests access to the user's Downloads folder.
   identity: null
-pkg:
-  allowAnywhere: false
-  allowCurrentUserHome: false
-  background:
-    alignment: bottomleft
+dmg:
+  sign: false
+  contents:
+    - x: 300
+      y: 130
+      type: "link"
+      path: "/Applications"
+    - x: 70
+      y: 130
+      type: "file"
+# pkg:
+#   allowAnywhere: false
+#   allowCurrentUserHome: false
+#   background:
+#     alignment: bottomleft
 npmRebuild: true
 publish: []
