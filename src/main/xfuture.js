@@ -1,7 +1,7 @@
 import { app, BrowserWindow } from 'electron'
 import path from 'path'
 import fs from 'fs'
-import xEngine from 'xfuture/index'
+import xEngine from './xfuture_engine'
 
 const getXfuturePath = () => {
   return path.join(__dirname, "../../resources/xfuture").replace("app.asar", "app.asar.unpacked");

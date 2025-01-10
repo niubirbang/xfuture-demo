@@ -4,18 +4,18 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   main: {
-    plugins: [bytecodePlugin({
-      protectedStrings: [
-        '88991238',
-      ]
-    }), externalizeDepsPlugin()]
+    plugins: [externalizeDepsPlugin()],
+    build: {
+      rollupOptions: {
+        input: {
+          index: './src/main/index.js',
+          xfuture_source: './src/main/xfuture_source.node',
+        }
+      }
+    }
   },
   preload: {
-    plugins: [bytecodePlugin({
-      protectedStrings: [
-        '88991238',
-      ]
-    }), externalizeDepsPlugin()]
+    plugins: [externalizeDepsPlugin()]
   },
   renderer: {
     resolve: {
