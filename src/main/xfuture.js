@@ -22,14 +22,7 @@ export const install = async () => {
   switch (process.platform) {
     case 'win32':
       xfutureShellPath = 'maodou'
-      switch (process.arch) {
-        case 'x64':
-          xfutureHelperPath = path.join(xfuturePath, `package/win32-x64/sysproxy.exe`)
-          break
-        case 'arm64':
-          xfutureHelperPath = path.join(xfuturePath, `package/win32-arm64/sysproxy.exe`)
-          break
-      }
+      xfutureHelperPath = path.join(xfuturePath, 'package/win32/sysproxy.exe')
       break
     case 'darwin':
       xfutureShellPath = path.join(xfuturePath, 'package/darwin/install_helper.sh')
