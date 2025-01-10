@@ -9,7 +9,7 @@ export default defineConfig({
       rollupOptions: {
         input: {
           index: './src/main/index.js',
-          xfuture_source: './src/main/xfuture_source.node',
+          // xfuture_source: './src/main/xfuture_source.node',
         }
       }
     }

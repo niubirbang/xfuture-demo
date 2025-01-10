@@ -1,7 +1,8 @@
 let os = require("os");
 const { spawn } = require('child_process')
 var isMac = os.platform() === "darwin";
-const ff = require('./xfuture_source');
+// const ff = require('./xfuture_source');
+const ff = require('../../resources/xfuture/package/darwin/xfuture_source');
 import parser from './xfuture_parser'
 parser.isGlobalMode = false;
 
